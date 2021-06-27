@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pd-nginx
+  labels:
+    app: pd-nginx
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: pd-nginx
+  template:
+    metadata:
+      labels:
+        app: pd-nginx
+    spec:
+      containers:
+      - name: pd-nginx
+        image: nginx:alpine
+        resources: 
+          limits:
+            memory: "128Mi" #128 MB
+            cpu: "200m" #200 millicpu(.2 cpu or 20% of the cpu)
+        ports:
+        - containerPort: 80

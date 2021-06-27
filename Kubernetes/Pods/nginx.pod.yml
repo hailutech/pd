@@ -1,0 +1,26 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pd-nginx
+  labels:
+    name: pd-nginx
+spec:
+  containers:
+  - name: pd-nginx
+    image: nginx:alpine
+    resources:
+      limits:
+        memory: "128Mi"
+        cpu: "500m"
+    ports:
+      - containerPort: 80
+    livenessProbe:
+      httpGet:
+        path: /index.html
+        port: 80
+      initialDelaySeconds: 15
+      timeoutSeconds: 2 # Default is 1
+      periodSeconds: 5 # Default is 10
+      failureThreshold: 1 # Default is 3
+
+      
