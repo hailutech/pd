@@ -1,11 +1,11 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: pd-nginx-loadbalancer
+  name: pd-nginx-loadbalancer 
 spec:
-  type: LoadBalancer
+  type: LoadBalancer # will provision an external IP to act as a loadbalancer for the service
   selector:
-    app: pd-nginx
+    app: pd-nginx # service will apply to resouces with label of app:pd-nginx
   ports:
   - name: "80"
     port: 80

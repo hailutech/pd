@@ -10,15 +10,5 @@
 
 <p>I have created the necessary yaml files for deployment and service configurations in order to achieve requirement of the excercise. I have included kubectl commands  in a bash file.</p> 
 
-Pods
-
-Deployments
-
-Services
-
-
-
-
-
-
+<p>To get the configuations right, once you clone the code to your computer. Using the terminal swithch to the Deployments folder first and sequentially run the kubctl commands provided in nginx.deployment.sh file. Then Switch to the Services folder and sequentially run the kubectl commands in teh nginx.service.sh file.</p>
 
